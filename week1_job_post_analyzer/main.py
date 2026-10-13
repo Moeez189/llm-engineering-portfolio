@@ -1,5 +1,3 @@
-import json
-
 import requests
 
 from core.scraper import fetch_page_text
@@ -68,7 +66,6 @@ def main():
     if details is None:
         print("Sorry, the model couldn't read this job post. Please try again.")
         return
-    print(json.dumps(details, indent=2, ensure_ascii=False))
     print()
     for piece in stream_job_summary(text, details):
         print(piece, end="", flush=True)
